@@ -1,0 +1,293 @@
+/* ============================================================
+   BENTO GRID — Right-hand panel
+   ============================================================ */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+}
+
+/* ---- Shared card base ---- */
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- Topic Picker Card ---- */
+.card-topics {
+  grid-column: 1;
+  grid-row: 1;
+  background: var(--white);
+  border: 1.5px solid var(--sand);
+  padding: 22px;
+}
+
+.card-topics .card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.card-topics .pill-toggle {
+  width: 48px; height: 26px;
+  background: var(--sand);
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-topics .pill-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: left 0.2s;
+}
+
+.card-topics h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.topic-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 50px;
+  border: 1.5px solid #ddd;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+
+.topic-tag:hover { background: var(--sand); transform: translateY(-1px); }
+.topic-tag.selected { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+.topic-tag .x {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: grid;
+  place-items: center;
+  font-size: 0.6rem;
+}
+
+/* ---- Reviews Card ---- */
+.card-reviews {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--white);
+  border: 1.5px solid var(--sand);
+  padding: 22px;
+}
+
+.card-reviews h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.review-text {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.review-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.avatar-stack {
+  display: flex;
+}
+
+.avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  margin-left: -8px;
+  background: var(--sand);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.avatar:first-child { margin-left: 0; }
+
+.avatar-a { background: #d4a8f0; }
+.avatar-b { background: var(--rose); }
+.avatar-c { background: #a8d4f0; }
+.avatar-d { background: var(--gold); }
+
+.likes-count {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.likes-count strong {
+  font-size: 1.1rem;
+  color: var(--ink);
+  display: block;
+}
+
+/* ---- Orb / Visual Card ---- */
+.card-orb {
+  grid-column: 1;
+  grid-row: 2;
+  background: var(--dark-card);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.orb-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 16px; left: 16px;
+}
+
+.orb-badge {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.orb-badge.service { background: rgba(255,255,255,0.12); color: var(--white); }
+.orb-badge.year    { background: var(--white); color: var(--ink); }
+
+/* Animated gradient orb */
+.orb-visual {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.orb {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    #c084fc, #e879f9, #fb7185, #f97316,
+    #a78bfa, #818cf8, #c084fc
+  );
+  filter: blur(0px);
+  animation: orb-rotate 6s linear infinite, orb-morph 4s ease-in-out infinite alternate;
+  box-shadow: 0 0 80px rgba(192,132,252,0.5), 0 0 120px rgba(168,85,247,0.3);
+}
+
+@keyframes orb-rotate {
+  from { transform: rotate(0deg) scale(1); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes orb-morph {
+  0%   { border-radius: 50% 40% 60% 40%; }
+  33%  { border-radius: 60% 50% 40% 60%; }
+  66%  { border-radius: 40% 60% 50% 50%; }
+  100% { border-radius: 55% 45% 55% 45%; }
+}
+
+/* ---- Stats Dark Card ---- */
+.card-stats {
+  grid-column: 2;
+  grid-row: 2;
+  background: var(--dark-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+
+.stat-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-big span { color: var(--gold); }
+
+.stat-desc {
+  margin-top: 8px;
+}
+
+.stat-desc h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.stat-desc p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.read-more-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.read-more-btn .arrow-circle {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+}

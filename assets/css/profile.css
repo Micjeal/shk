@@ -1,0 +1,152 @@
+/* ============================================================
+   SHARED SPLIT LAYOUT
+   ============================================================ */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.split-layout.reverse {
+  direction: rtl;
+}
+
+.split-layout.reverse .split-text,
+.split-layout.reverse .split-image {
+  direction: ltr;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-bottom: 15px;
+}
+
+.text-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ============================================================
+   PARTNERSHIP IMAGE FRAME
+   ============================================================ */
+.image-frame {
+  position: relative;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.image-frame img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-xl);
+}
+
+.frame-decoration {
+  position: absolute;
+  top: 40px; right: 0; bottom: 0; left: 40px;
+  border: 2px solid var(--sand);
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+/* ============================================================
+   DOCUMENT PREVIEW (Business Profile)
+   ============================================================ */
+.document-preview {
+  position: relative;
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.document-preview:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.document-preview img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  border: 8px solid white;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 8px; /* Match the border */
+  background: rgba(13, 13, 13, 0.4);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+}
+
+.document-preview:hover .preview-overlay {
+  opacity: 1;
+}
+
+.overlay-circle {
+  width: 60px; height: 60px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+/* Download Pill Button */
+.download-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ink);
+  color: white;
+  text-decoration: none;
+  padding: 5px 25px 5px 5px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.download-pill .icon {
+  width: 40px; height: 40px;
+  background: var(--gold);
+  color: var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  margin-right: 15px;
+}
+
+.download-pill:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.download-pill:hover .icon {
+  background: var(--ink);
+  color: var(--white);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 992px) {
+  .split-layout, .split-layout.reverse {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 60px 0;
+  }
+  .image-frame, .document-preview {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,175 @@
+/* ============================================================
+   MAIN FOOTER
+   ============================================================ */
+.main-footer {
+  background: var(--dark-card);
+  color: white;
+  padding: 100px 0 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1.2fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+/* Brand Column */
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.footer-logo span { color: var(--gold); }
+
+.footer-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.social-pills {
+  display: flex;
+  gap: 12px;
+}
+
+.social-pills a {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-pills a:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-3px);
+}
+
+/* Headings */
+.footer-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+
+/* Links List */
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.6;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* Office & Support Info */
+.office-location {
+  margin-bottom: 20px;
+}
+
+.office-location strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.office-location p {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.support-item {
+  margin-bottom: 25px;
+}
+
+.support-label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.support-value {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.whatsapp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-pill:hover {
+  transform: scale(1.05);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-legal a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}

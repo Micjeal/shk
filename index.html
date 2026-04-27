@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voya — We Are Creative Visionaries</title>
+  <meta name="description" content="Voya Travel Agency — Crafting extraordinary journeys for discerning travellers worldwide." />
+
+  <!-- Section-scoped stylesheets -->
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+<link rel="stylesheet" href="assets/css/hero.css" />
+<link rel="stylesheet" href="assets/css/bento.css" />
+<link rel="stylesheet" href="assets/css/about.css" />
+<link rel="stylesheet" href="assets/css/layout.css" />
+<link rel="stylesheet" href="assets/css/responsiveness.css" />
+<link rel="stylesheet" href="assets/css/services.css" />
+<link rel="stylesheet" href="assets/css/fleet.css" />
+<link rel="stylesheet" href="assets/css/gallery.css" />
+<link rel="stylesheet" href="assets/css/demo.css" />
+<link rel="stylesheet" href="assets/css/partnership.css" />
+<link rel="stylesheet" href="assets/css/profile.css" />
+<link rel="stylesheet" href="assets/css/testimonials.css" />
+<link rel="stylesheet" href="assets/css/final-cta.css" />
+<link rel="stylesheet" href="assets/css/footer.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════ -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="assets/images/logo1.png" alt="Skahhe Travel Care Logo" class="nav-logo-img">
+      <span class="nav-logo-name">Skahhe Travel Care</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#"          class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#tours">Tours</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Get Started</a>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero section">
+
+    <!-- LEFT COLUMN -->
+    <div class="hero-left">
+      <!-- Headline -->
+      <h1 class="hero-headline reveal reveal-delay-1">
+        Skahhe <span class="star">✦</span><br />
+        <span class="highlight">Travel</span><br />
+        Care!
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-3">The Solution You Deserve</p>
+
+      <!-- Sub-copy 
+      <div class="hero-sub reveal reveal-delay-2">
+        <h3>Our Success</h3>
+        <p>
+          We bring together experienced destination specialists,
+          distinguished by meticulous attention to detail and
+          innovative solutions — turning every trip into an
+          unforgettable story.
+        </p>-->
+        <a href="#portfolio" class="scroll-btn" aria-label="Explore destinations">
+          <svg viewBox="0 0 24 24" fill="white" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/>
+            <polyline points="7 7 17 7 17 17"/>
+          </svg>
+        </a>
+      </div>
+
+    </div><!-- /hero-left -->
+
+
+    <!-- RIGHT COLUMN — Bento Grid -->
+    <div class="bento-grid" aria-label="Highlights grid">
+
+      <!-- Card 1: Topic / Destination Picker -->
+      <div class="card card-topics reveal">
+        <div class="card-top">
+          <h4>Choose a destination type</h4>
+          <div class="pill-toggle" role="switch" aria-checked="true"></div>
+        </div>
+        <div class="topic-tags">
+          <span class="topic-tag selected">Beach ✕</span>
+          <span class="topic-tag">Safari ✕</span>
+          <span class="topic-tag selected">City Break ✕</span>
+          <span class="topic-tag">Adventure ✕</span>
+          <span class="topic-tag">Honeymoon ✕</span>
+          <span class="topic-tag">Cruise ✕</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Reviews -->
+      <div class="card card-reviews reveal reveal-delay-1">
+        <h4>Reviews</h4>
+        <p class="review-text" id="hero-review-text">
+          "The entire experience surpassed all expectations.
+          Voya's professionalism and creative approach to
+          our itinerary was simply outstanding!"
+        </p>
+        <div class="review-bottom">
+          <div class="avatar-stack">
+            <div class="avatar avatar-a" id="hero-review-avatar">AK</div>
+            <div class="avatar avatar-b">MT</div>
+            <div class="avatar avatar-c">JL</div>
+            <div class="avatar avatar-d">RP</div>
+          </div>
+          <div class="likes-count">
+            <strong data-target="240" data-suffix="+">0+</strong>
+            Happy Clients
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Orb / Visual -->
+      <div class="card card-orb reveal reveal-delay-2">
+        <div class="orb-label">
+          <span class="orb-badge service">Our Experience</span>
+          <span class="orb-badge year">2024</span>
+        </div>
+        <div class="orb-visual">
+          <div class="orb" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Card 4: Stats dark -->
+      <div class="card card-stats reveal reveal-delay-3">
+        <div>
+          <div class="stat-big">
+            <span data-target="370" data-suffix="+">0+</span>
+          </div>
+          <div class="stat-desc">
+            <h3>Completed Journeys</h3>
+            <p>
+              We are proud to have delivered over 370 bespoke
+              travel experiences for discerning clients worldwide.
+            </p>
+          </div>
+        </div>
+        <a href="#portfolio" class="read-more-btn">
+          Explore More
+          <span class="arrow-circle">→</span>
+        </a>
+      </div>
+
+    </div><!-- /bento-grid -->
+
+  </section><!-- /hero -->
+
+
+<section class="about-section" id="about">
+  <div class="page-wrapper">
+    <div class="about-grid">
+      
+      <div class="about-visual reveal">
+        <div class="image-wrapper">
+          <img src="assets/images/teamleader.jpg" alt="Skahhe Leadership">
+          <div class="experience-badge">
+            <span class="years">7+</span>
+            <span class="label">Years of<br>Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-1">
+        <div class="kicker">About Skahhe</div>
+        <h2 class="section-title">Skahhe Travel Care (U) Ltd</h2>
+        
+        <div class="about-description">
+          <p class="lead">Skahhe Travel Care (U) Ltd is an indigenous transport company in Uganda. The company has been in the transportation business for over 7 years.</p>
+          <p>SKAHHE understands the importance of having a clean, safe, well maintained and functional vehicle. The company has an extensive fleet of vehicles and able to meet different needs of our clientele.</p>
+          <p>The team of drivers are professional and reliable with experience driving around Kampala as well as upcountry. Skahhe travel care provides services for different organizations including international NGOs, local NGOs and government institutions.</p>
+          <p>The company specializes in provision of luxury air conditioned Vans (Drones/super custom), 4x4 vehicles (station wagons), Double cabins pickup, Coasters and saloon cars. The company cars are fully comprehensively insured and installed with GPS vehicle tracking device.</p>
+          <p>SKAHHE is open to doing business with you by giving you safe travels and quality services. The company team is available for a more detailed interaction and would be privileged to have you/organization as one of our valued clientele.</p>
+        </div>
+
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <div class="contact-details">
+            <p><strong>Phone:</strong> +256 775 346 164</p>
+            <p><strong>Email:</strong> skahhe@gmail.com</p>
+            <p><strong>Main Office:</strong> Plot 2192 Kira, Wakiso District</p>
+            <p><strong>Mbarara Office:</strong> Plot 1034, Mbarara City, Uganda</p>
+            <p><strong>Mbale Office:</strong> Plot 60 Mbale City, Uganda</p>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a href="mailto:skahhe@gmail.com" class="btn-main">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="page-wrapper">
+    
+    <div class="services-header">
+      <h2 class="section-title reveal">
+        Our Premium <span class="highlight">Services</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-1">
+        Comprehensive transport solutions for every need
+      </p>
+    </div>
+    
+    <div class="services-grid">
+      
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-image-wrapper">
+          <img src="assets/images/Executive Car Rentals.jpg" alt="Luxury Car for Executive Rentals">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Executive Car Rentals</h3>
+          <p>Travel in comfort and class with our premium fleet including SUVs, saloon cars, and luxury vehicles for VIP transport and corporate use.</p>
+          <a href="#contact" class="service-link">
+            Learn More <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-image-wrapper">
+          <img src="assets/images/Group Transport Solutions1.jpg" alt="Group Transport Vehicle">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Group Transport Solutions</h3>
+          <p>Minibuses, vans, and coasters for family trips, wedding convoys, or corporate retreats. Efficient and affordable group transportation.</p>
+          <a href="#contact" class="service-link">
+            Learn More <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-image-wrapper">
+          <img src="assets/images/Scenic Tour Packages.jpg" alt="Scenic Tour Experience">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Scenic Tour Packages</h3>
+          <p>Experience Uganda's hidden gems with custom-guided tours from safari adventures to boat cruises, curated for unforgettable memories.</p>
+          <a href="#contact" class="service-link">
+            Learn More <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="page-wrapper">
+    <div class="stats-glass-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="7">0</span><span class="stat-suffix">+</span>
+        <p class="stat-label">Years of Excellence</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+        <p class="stat-label">Premium Fleet</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number">24</span><span class="stat-suffix">/7</span>
+        <p class="stat-label">Customer Support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fleet" class="fleet-section">
+  <div class="page-wrapper">
+    
+    <div class="section-header reveal">
+      <h2 class="section-title">The <span class="highlight">Voya</span> Collection</h2>
+      <p class="section-subtitle">SKAHHE FLEET — Engineered for the Pearl of Africa</p>
+    </div>
+
+    <div class="fleet-catalog">
+      
+      <div class="fleet-card reveal">
+        <div class="fleet-img-box">
+          <img src="assets/images/tous1.jpg" alt="Toyota Hiace Van">
+          <div class="fleet-tag">4WD</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">9-14 SEATS • MANUAL</div>
+          <h3>Vans (Drones)</h3>
+          <p>The ultimate choice for group tours and corporate shuttles. Features a high roof and extensive boot space.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>14 Pax</strong></li>
+            <li><span>Usage</span> <strong>Airport/Safari</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-1">
+        <div class="fleet-img-box">
+          <img src="assets/images/harrier.jpg" alt="Toyota Harrier">
+          <div class="fleet-tag">SUV</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">5 SEATS • AUTOMATIC</div>
+          <h3>Toyota Harrier</h3>
+          <p>Sleek, powerful, and luxurious. Perfect for business executives and high-end road travel.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>5 Pax</strong></li>
+            <li><span>Terrain</span> <strong>All-Road</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-2">
+        <div class="fleet-img-box">
+          <img src="assets/images/double.jpg" alt="Ford Ranger">
+          <div class="fleet-tag">Luxury</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">5 SEATS • 4WD</div>
+          <h3>Double Cabin</h3>
+          <p>Heavy-duty performance for off-road duties, cargo, and rugged upcountry travel.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>5 Pax</strong></li>
+            <li><span>Power</span> <strong>High Torque</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal">
+        <div class="fleet-img-box">
+          <img src="assets/images/Toyota Premio (Sedan).jpg" alt="Toyota Premio">
+          <div class="fleet-tag">Sedan</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">4-5 SEATS • AUTOMATIC</div>
+          <h3>Toyota Premio</h3>
+          <p>Sleek design, fuel-efficient, and luxurious comfort. Perfect for city errands, executive rides, and airport transfers.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>5 Pax</strong></li>
+            <li><span>Drive</span> <strong>2WD</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-1">
+        <div class="fleet-img-box">
+          <img src="assets/images/wish1.jpg" alt="Toyota Wish">
+          <div class="fleet-tag">Family</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">7 SEATS • CVT</div>
+          <h3>Toyota Wish</h3>
+          <p>Spacious interior with versatile seating. Ideal for family transport, urban commuting, and weekend getaways.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>7 Pax</strong></li>
+            <li><span>Drive</span> <strong>Front-Wheel</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-2">
+        <div class="fleet-img-box">
+          <img src="assets/images/tours2.jpg" alt="Toyota Super Custom">
+          <div class="fleet-tag">Premium</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">7-9 SEATS • AUTOMATIC</div>
+          <h3>Toyota Super Custom</h3>
+          <p>Air conditioning, reclining seats, and smooth suspension. Perfect for private family safaris and VIP guest pickups.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>9 Pax</strong></li>
+            <li><span>Drive</span> <strong>4WD</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal">
+        <div class="fleet-img-box">
+          <img src="assets/images/noah1.jpg" alt="Toyota Alphard Noah">
+          <div class="fleet-tag">VIP</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">7-8 SEATS • AUTOMATIC</div>
+          <h3>Alphard / Noah</h3>
+          <p>Premium interior with ultra-quiet cabin, sunroof, and comfort-oriented seating. Perfect for diplomats, weddings, and VIP travel.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>8 Pax</strong></li>
+            <li><span>Drive</span> <strong>2WD/4WD</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-1">
+        <div class="fleet-img-box">
+          <img src="assets/images/Toyota Vanguard (SUV).jpg" alt="Toyota Vanguard">
+          <div class="fleet-tag">SUV</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">5-7 SEATS • AUTOMATIC</div>
+          <h3>Toyota Vanguard</h3>
+          <p>Spacious interior with high ground clearance and strong road presence. Great for family travel, road trips, and upcountry safaris.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>7 Pax</strong></li>
+            <li><span>Drive</span> <strong>4WD</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fleet-card reveal reveal-delay-2">
+        <div class="fleet-img-box">
+          <img src="assets/images/prado.jpg" alt="Toyota Land Cruiser Prado">
+          <div class="fleet-tag">Premium</div>
+        </div>
+        <div class="fleet-info">
+          <div class="fleet-meta">7 SEATS • AUTOMATIC</div>
+          <h3>Toyota Land Cruiser Prado</h3>
+          <p>The ultimate luxury SUV with unmatched off-road capability. Perfect for high-end safaris and executive travel across East Africa.</p>
+          <ul class="fleet-specs">
+            <li><span>Capacity</span> <strong>7 Pax</strong></li>
+            <li><span>Terrain</span> <strong>All-Terrain</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fleet-cta-bar reveal">
+       <div class="cta-text">Looking for something specific? <span>View our full 20+ vehicle inventory.</span></div>
+       <a href="#contact" class="btn-main">Book Your Ride</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="gallery-section" id="tours">
+  <div class="page-wrapper">
+    <div class="section-header reveal">
+      <h2 class="section-title">The <span class="highlight">Visual</span> Journey</h2>
+      <p class="section-subtitle">Explore Uganda’s most stunning destinations through our lens</p>
+    </div>
+
+    <div class="gallery-masonry">
+      <div class="gallery-card reveal wide">
+        <img src="assets/images/tours2.jpg" alt="Wildlife Safari">
+        <div class="gallery-info">
+          <h3>Wildlife Safari</h3>
+          <span class="gallery-tag">Adventure</span>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-1 tall">
+        <img src="assets/images/tours3.jpg" alt="Gorilla Trekking">
+        <div class="gallery-info">
+          <h3>Gorilla Trekking</h3>
+          <span class="gallery-tag">Nature</span>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-2">
+        <img src="assets/images/tous2.jpg" alt="Adventure Tour">
+        <div class="gallery-info">
+          <h3>Adventure Tour</h3>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal">
+        <img src="assets/images/tours5.jpg" alt="Scenic Tour">
+        <div class="gallery-info">
+          <h3>Scenic Tour</h3>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal wide">
+        <img src="assets/images/Scenic Tour Packages.jpg" alt="Scenic Tours">
+        <div class="gallery-info">
+          <h3>Scenic Tours</h3>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal">
+        <img src="assets/images/tours6.jpg" alt="Group Tours">
+        <div class="gallery-info">
+          <h3>Expeditions</h3>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-1">
+        <img src="assets/images/tours7.jpg" alt="Group Tours">
+        <div class="gallery-info">
+          <h3>Group Adventures</h3>
+          <span class="gallery-tag">Team</span>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-2">
+        <img src="assets/images/tours9.jpg" alt="Group Tours">
+        <div class="gallery-info">
+          <h3>Team Expeditions</h3>
+          <span class="gallery-tag">Group</span>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal">
+        <img src="assets/images/tours10.jpg" alt="Group Tours">
+        <div class="gallery-info">
+          <h3>Collective Journeys</h3>
+          <span class="gallery-tag">Community</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" id="demo">
+  <div class="page-wrapper">
+    <div class="demo-grid">
+      
+      <div class="demo-visual reveal">
+        <div class="video-frame">
+          <video controls poster="assets/images/demo-poster.jpg" class="fleet-video">
+            <source src="assets/videos/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-accent"></div>
+        </div>
+      </div>
+
+      <div class="demo-content reveal reveal-delay-1">
+        <div class="founder-badge">
+          <img src="assets/images/teamleader.jpg" alt="Team Leader" class="founder-img">
+          <div class="founder-meta">
+            <strong>Founder</strong>
+            <span>Team Leader, Skahhe</span>
+          </div>
+        </div>
+
+        <h2 class="demo-title">Why Choose <br><span class="highlight">Our Fleet</span></h2>
+        
+        <div class="demo-text">
+          <p>At Skahhe Travel Care, we take pride in offering only the most reliable and well-maintained vehicles for your journey. Our fleet is regularly serviced and equipped with modern amenities to ensure your comfort and safety across East Africa.</p>
+          <p>Whether you're exploring city streets or venturing into the countryside, our vehicles are designed to handle all terrains while providing a smooth ride. Your journey is our priority.</p>
+        </div>
+
+        <div class="demo-actions">
+          <a href="#contact" class="btn-main">Book Your Ride Today</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="partnership-section">
+  <div class="page-wrapper">
+    <div class="split-layout">
+      <div class="split-text reveal">
+        <div class="kicker">Strategic Alliances</div>
+        <h2 class="section-title">Our Valued <span class="highlight">Partnerships</span></h2>
+        <div class="text-content">
+          <p>At SKAHHE Travel Care, we collaborate with leading organizations across East Africa to provide exceptional transportation solutions. Our partnerships enable us to deliver reliable, safe, and comfortable experiences.</p>
+          <p>Through these strategic alliances, we combine local expertise with international standards, ensuring every journey meets the highest levels of satisfaction.</p>
+        </div>
+      </div>
+      <div class="split-image reveal reveal-delay-1">
+        <div class="image-frame">
+          <img src="assets/images/partner.jpg" alt="Our Valued Partners">
+          <div class="frame-decoration"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-section">
+  <div class="page-wrapper">
+    <div class="split-layout reverse">
+      <div class="split-text reveal">
+        <div class="kicker">Company Credentials</div>
+        <h2 class="section-title">Our <span class="highlight">Business</span> Profile</h2>
+        <div class="text-content">
+          <p>SKAHHE Travel Care (U) Ltd is a premier transport and logistics company with over 7 years of excellence in Uganda's transportation sector.</p>
+          <p>Our profile provides detailed insights into our company's capabilities, fleet specifications, and the core values that drive our operations across East Africa.</p>
+        </div>
+        
+        <div class="profile-action">
+           <a href="assets/images/companypro.jpg" download="SKAHHE_Business_Profile.jpg" class="download-pill">
+              <span class="icon">↓</span>
+              <span class="label">Download Full Profile (JPG)</span>
+           </a>
+        </div>
+      </div>
+
+      <div class="split-image reveal reveal-delay-1">
+        <div class="document-preview">
+          <a href="assets/images/companypro.jpg" download>
+            <img src="assets/images/companypro.jpg" alt="SKAHHE Business Profile">
+            <div class="preview-overlay">
+              <div class="overlay-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="white"/></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" id="testimonials">
+  <div class="page-wrapper">
+    <div class="section-header reveal">
+      <div class="kicker">Social Proof</div>
+      <h2 class="section-title">Trusted by <span class="highlight">Industry Leaders</span></h2>
+      <p class="section-subtitle">Collaborating with NGOs, government agencies, and travelers across East Africa.</p>
+    </div>
+
+    <div class="testimonial-masonry">
+      <div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">Skahhe Travel Care has provided timely and quality car hire services over the past four years, demonstrating a strong commitment to excellence.</p>
+        <div class="client-footer">
+          <div class="client-avatar">JN</div>
+          <div class="client-info">
+            <h4>Miriam</h4>
+            <span>ACODE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Skahhe has offered exceptional services, coupled with a high level of discipline exhibited by their drivers. The vehicles are always clean and in perfect mechanical condition. I would choose them any day!</p>
+        <div class="client-footer">
+          <div class="client-avatar">BB</div>
+          <div class="client-info">
+            <h4>Brenda</h4>
+            <span>BDO International</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">Professionalism and reliability in organizing travel across Northern Uganda and West Nile regions. Wholeheartedly recommended.</p>
+        <div class="client-footer">
+          <div class="client-avatar">RM</div>
+          <div class="client-info">
+            <h4>Patrick</h4>
+            <span>Executive Director, IFRAD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="quote-text">SKAHHE Travel Care for the last two years has proven to be one of CDFU's most reliable service providers, offering good quality services, ensuring timely delivery at affordable prices, and maintaining good client relations and flexibility.</p>
+        <div class="client-footer">
+          <div class="client-avatar">SK</div>
+          <div class="client-info">
+            <h4>Dickson</h4>
+            <span>CDFU</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Skahhe Travel Care has provided Transport Services for field Research Teams and Consultants on different projects for the last 5 years, demonstrating reliability and excellence.</p>
+        <div class="client-footer">
+          <div class="client-avatar">RM</div>
+          <div class="client-info">
+            <h4>Moses</h4>
+            <span>Adroit Consult international</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Their competitive pricing, combined with excellent service, makes them an outstanding choice. Five stars are not enough – I would give them ten!</p>
+        <div class="client-footer">
+          <div class="client-avatar">JM</div>
+          <div class="client-info">
+            <h4>Jonas Mbabazi</h4>
+            <span>ACODE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta reveal">
+  <div class="cta-container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to <span class="highlight-alt">Begin?</span></h2>
+      <p class="cta-desc">
+        Don’t get stuck. Reach your destination safely with Skahhe Travel Care. 
+        Available for both <strong>Self-Drive</strong> and <strong>Chauffeur-Driven</strong> hire.
+      </p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn-main">Contact Us Now</a>
+        <a href="tel:+256000000000" class="btn-outline">Call Support</a>
+      </div>
+    </div>
+    <div class="cta-bg-glow"></div>
+  </div>
+</section>
+
+<footer class="main-footer" id="contact">
+  <div class="page-wrapper">
+    <div class="footer-grid">
+      
+      <div class="footer-col brand-col">
+        <h3 class="footer-logo">Skahhe <span>Travel Care</span></h3>
+        <p class="footer-bio">
+          Your trusted partner for premium transportation and tour experiences across East Africa. Excellence in every journey.
+        </p>
+        <div class="social-pills">
+          <a href="https://www.facebook.com/skahhetravelcare" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/skahhetravelcare" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/skahhetravelcare" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/256775346164" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#fleet">Our Fleet</a></li>
+          <li><a href="#tours">Tour Packages</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4 class="footer-heading">Global Offices</h4>
+        <div class="office-location">
+          <strong>Main Office</strong>
+          <p>Plot 2129 Kira, Wakiso District</p>
+        </div>
+        <div class="office-location">
+          <strong>Mbarara City</strong>
+          <p>Plot 1034, Mbarara City, Uganda</p>
+        </div>
+        <div class="office-location">
+          <strong>Mbale City</strong>
+          <p>Plot 60 Mbale City, Uganda</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Direct Support</h4>
+        <div class="support-item">
+          <span class="support-label">Email Us</span>
+          <a href="mailto:skahhe@gmail.com" class="support-value">skahhe@gmail.com</a>
+        </div>
+        <div class="support-item">
+          <span class="support-label">24/7 Hotline</span>
+          <a href="tel:+256775346164" class="support-value">+256 775 346 164</a>
+        </div>
+        <div class="support-item">
+          <a href="https://wa.me/256775346164" target="_blank" class="whatsapp-pill">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Skahhe Travel Care Uganda Ltd. | All Rights Reserved</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════ -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

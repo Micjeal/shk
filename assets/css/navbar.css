@@ -1,0 +1,211 @@
+/* ============================================================
+   NAVBAR — Travel Agency
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:     #FAFAF8;
+  --ink:       #0D0D0D;
+  --sand:      #E8E0D4;
+  --gold:      #C9A96E;
+  --rose:      #E8C4B8;
+  --violet:    #6B4FBB;
+  --dark-card: #111118;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(250,250,248,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav-logo-icon {
+  width: 40px; height: 40px;
+  background: var(--ink);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-logo-icon svg { width: 22px; height: 22px; fill: var(--white); }
+
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nav-logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  background: var(--sand);
+  padding: 6px;
+  border-radius: 50px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: var(--white);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--white) !important;
+  padding: 12px 28px !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s !important;
+}
+
+.nav-cta:hover {
+  background: var(--violet) !important;
+  transform: translateY(-1px);
+}
+
+/* ---- MOBILE NAVIGATION ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--ink);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 18px 20px;
+  }
+  
+  .nav-logo {
+    order: 1;
+  }
+  
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 80px 40px 40px;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 99;
+  }
+  
+  .nav-links.open {
+    left: 0;
+  }
+  
+  .nav-links a {
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--sand);
+    border-radius: 0;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    background: transparent;
+    color: var(--gold);
+    box-shadow: none;
+    padding-left: 10px;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+}

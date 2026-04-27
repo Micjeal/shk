@@ -1,0 +1,6 @@
+# This file ensures the images directory is tracked by git
+# Add your travel images here:
+# - hero-bg.jpg (for hero section background)
+# - destination1.jpg (Paris)
+# - destination2.jpg (Tokyo) 
+# - destination3.jpg (Bali)

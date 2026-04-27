@@ -1,0 +1,179 @@
+/* ============================================================
+   GALLERY SECTION
+   ============================================================ */
+.gallery-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Sizing Classes */
+.gallery-card.wide { grid-column: span 2; }
+.gallery-card.tall { grid-row: span 2; }
+
+/* Info Overlay */
+.gallery-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.gallery-card:hover .gallery-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.gallery-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+/* ============================================================
+   DEMO / FOUNDER SECTION
+   ============================================================ */
+.demo-section {
+  padding: 140px 0;
+  background: linear-gradient(135deg, var(--sand) 0%, #f8f8f8 100%); /* Enhanced gradient background */
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(201, 169, 110, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Adjusted for smaller video */
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Video Frame - Smaller perspective */
+.video-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  max-width: 500px; /* Smaller video container */
+  margin: 0 auto;
+  transform: perspective(1000px) rotateY(-5deg); /* Subtle 3D perspective */
+}
+
+.fleet-video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-xl);
+  z-index: 2;
+  position: relative;
+  max-height: 300px; /* Smaller video height */
+  object-fit: cover;
+}
+
+.video-accent {
+  position: absolute;
+  top: -20px; left: -20px;
+  width: 100px; height: 100px;
+  border-left: 4px solid var(--gold);
+  border-top: 4px solid var(--gold);
+  z-index: 1;
+}
+
+/* Founder Content */
+.founder-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.founder-img {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+}
+
+.founder-meta strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.founder-meta span {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.demo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.demo-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.demo-actions { margin-top: 40px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .demo-grid { grid-template-columns: 1fr; gap: 60px; }
+  .gallery-masonry { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .gallery-masonry { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+  .gallery-card.wide { grid-column: span 1; }
+}

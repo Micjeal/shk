@@ -1,0 +1,164 @@
+/* ============================================================
+   TESTIMONIALS GRID
+   ============================================================ */
+.testimonials-section {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.testimonial-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.testi-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sand);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.testi-card.featured {
+  background: var(--ink);
+  color: var(--white);
+  grid-row: span 2;
+  justify-content: center;
+}
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: -10px;
+}
+
+.stars {
+  color: var(--gold);
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+.client-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.client-avatar {
+  width: 45px; height: 45px;
+  background: var(--sand);
+  color: var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.testi-card.featured .client-avatar {
+  background: var(--gold);
+}
+
+.client-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.client-info span {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   FINAL CALL TO ACTION
+   ============================================================ */
+.final-cta {
+  padding: 0 40px 100px;
+}
+
+.cta-container {
+  background: var(--dark-card);
+  border-radius: var(--radius-xl);
+  padding: 100px 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.cta-content { position: relative; z-index: 2; }
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 20px;
+}
+
+.highlight-alt {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.cta-desc {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-outline {
+  padding: 16px 35px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--ink);
+}
+
+.cta-bg-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%; height: 150%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .cta-container { padding: 60px 30px; }
+  .cta-btns { flex-direction: column; }
+}

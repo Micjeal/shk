@@ -1,0 +1,114 @@
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+  padding: 100px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ---- Stats Row ---- */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.stat-item {}
+
+.stat-year {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #888;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---- Headline ---- */
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 6vw, 5.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero-headline .highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, #e8c4b8 0%, #d4a8f0 100%);
+  border-radius: 16px;
+  padding: 4px 20px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.hero-headline .star {
+  display: inline-block;
+  color: var(--gold);
+  animation: spin-slow 8s linear infinite;
+  font-style: normal;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---- Sub-copy ---- */
+.hero-sub {
+  margin-top: 40px;
+}
+
+.hero-sub h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.hero-sub p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 380px;
+}
+
+/* ---- Scroll arrow ---- */
+.scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.scroll-btn:hover {
+  background: var(--ink);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+
+.scroll-btn svg { width: 20px; height: 20px; stroke: currentColor; }

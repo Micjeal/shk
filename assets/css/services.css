@@ -1,0 +1,131 @@
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+
+.services-section {
+  padding: 140px 0;
+  background: var(--white); /* White background to contrast with the Sand About section */
+  position: relative;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Services Grid ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ---- Service Card ---- */
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+}
+
+.service-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.service-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.service-card:hover .service-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(13,13,13,0.4));
+}
+
+/* ---- Content ---- */
+.service-content {
+  padding: 32px;
+}
+
+.service-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.service-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* ---- Link Button ---- */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: gap 0.3s ease;
+}
+
+.service-link .arrow {
+  color: var(--gold);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+  color: var(--gold);
+  gap: 12px;
+}
+
+/* ============================================================
+   RESPONSIVE (Add to responsiveness.css or here)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .services-section {
+    padding: 100px 0;
+  }
+}

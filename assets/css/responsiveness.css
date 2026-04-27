@@ -1,0 +1,132 @@
+/* ============================================================
+   RESPONSIVENESS — Global Breakpoints
+   ============================================================ */
+
+/* ---- Large Desktop (Clean up for ultra-wide) ---- */
+@media (min-width: 1440px) {
+  .page-wrapper {
+    max-width: 1400px;
+    padding: 0 60px;
+  }
+}
+
+/* ---- Tablet & Small Laptops (max-width: 1024px) ---- */
+@media (max-width: 1024px) {
+  /* Hero Reflow */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 32px 40px;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-sub {
+    margin: 40px auto 0;
+  }
+
+  /* Bento Grid Reflow */
+  .bento-grid {
+    grid-template-columns: 1fr 1fr; /* Keep 2 columns for tablets */
+    gap: 16px;
+  }
+
+  /* About Section Reflow */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .about-lead, .about-details p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-visual .visual-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* ---- Small Tablets & Large Phones (max-width: 768px) ---- */
+@media (max-width: 768px) {
+  /* Global Adjustments */
+  :root {
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+  }
+
+  .page-wrapper {
+    padding: 0 24px;
+  }
+
+  /* Typography Scaling */
+  .hero-headline {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  /* Bento Grid - Full Stack */
+  .bento-grid {
+    grid-template-columns: 1fr; /* Switch to single column */
+  }
+
+  .card-topics, .card-reviews, .card-orb, .card-stats {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: unset;
+  }
+
+  .card-orb {
+    height: 300px;
+  }
+
+  /* Navigation */
+  .nav-links {
+    display: none; /* Hide standard links for hamburger */
+  }
+
+  .nav-links.open {
+    display: flex;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    right: 20px;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    flex-direction: column;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+}
+
+/* ---- Small Mobile Devices (max-width: 480px) ---- */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .about-section {
+    padding: 80px 0;
+  }
+
+  .visual-badge {
+    right: 10px;
+    padding: 6px 14px;
+    font-size: 0.65rem;
+  }
+}
