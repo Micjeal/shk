@@ -162,7 +162,70 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(s);
   }
 
-  /* ---- 9. FLEET CARD REVEAL ---- */
+  /* ---- 9. FLEET CAROUSEL ---- */
+  const carousel = document.getElementById('fleetCarousel');
+  if (carousel) {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    let carouselInterval;
+
+    function showSlide(index) {
+      if (slides.length === 0) return;
+      
+      // Remove active class from all slides
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+      });
+      
+      // Remove active class from all indicators
+      indicators.forEach((indicator) => {
+        indicator.classList.remove('active');
+      });
+      
+      // Add active class to current slide and indicator
+      if (slides[index]) {
+        slides[index].classList.add('active');
+      }
+      if (indicators[index]) {
+        indicators[index].classList.add('active');
+      }
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+      carouselInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopCarousel() {
+      clearInterval(carouselInterval);
+    }
+
+    // Start carousel if we have slides
+    if (slides.length > 0) {
+      startCarousel();
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', stopCarousel);
+      carousel.addEventListener('mouseleave', startCarousel);
+
+      // Manual navigation via indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          stopCarousel();
+          showSlide(index);
+          startCarousel();
+        });
+      });
+    }
+  }
+
+  /* ---- 10. FLEET CARD REVEAL ---- */
   const fleetCards = document.querySelectorAll('.fleet-card');
   const fleetObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {

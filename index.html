@@ -6,6 +6,9 @@
   <title>Voya — We Are Creative Visionaries</title>
   <meta name="description" content="Voya Travel Agency — Crafting extraordinary journeys for discerning travellers worldwide." />
 
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <!-- Section-scoped stylesheets -->
   <link rel="stylesheet" href="assets/css/navbar.css" />
 <link rel="stylesheet" href="assets/css/hero.css" />
@@ -59,7 +62,7 @@
     <div class="hero-left">
       <!-- Headline -->
       <h1 class="hero-headline reveal reveal-delay-1">
-        Skahhe <span class="star">✦</span><br />
+        Skahhe <span class="star"><img src="assets/images/logo.jpg" alt="Star Logo" class="star-logo"></span><br />
         <span class="highlight">Travel</span><br />
         Care!
       </h1>
@@ -130,11 +133,44 @@
       <!-- Card 3: Orb / Visual -->
       <div class="card card-orb reveal reveal-delay-2">
         <div class="orb-label">
-          <span class="orb-badge service">Our Experience</span>
-          <span class="orb-badge year">2024</span>
+          <span class="orb-badge service">Our Fleet</span>
+          <span class="orb-badge year">Premium</span>
         </div>
         <div class="orb-visual">
-          <div class="orb" aria-hidden="true"></div>
+          <div class="fleet-carousel" id="fleetCarousel">
+            <div class="carousel-slide active">
+              <img src="assets/images/tous1.jpg" alt="Toyota Hiace Van">
+              <div class="slide-caption">Toyota Hiace Van</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/harrier.jpg" alt="Toyota Harrier">
+              <div class="slide-caption">Toyota Harrier</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/double.jpg" alt="Ford Ranger">
+              <div class="slide-caption">Ford Ranger</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/Toyota Premio (Sedan).jpg" alt="Toyota Premio">
+              <div class="slide-caption">Toyota Premio</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/wish1.jpg" alt="Toyota Wish">
+              <div class="slide-caption">Toyota Wish</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/Toyota Land Cruiser Prado.jpeg" alt="Toyota Land Cruiser Prado">
+              <div class="slide-caption">Toyota Land Cruiser Prado</div>
+            </div>
+          </div>
+          <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+            <span class="indicator" data-slide="5"></span>
+          </div>
         </div>
       </div>
 
@@ -430,7 +466,7 @@
 
       <div class="fleet-card reveal reveal-delay-2">
         <div class="fleet-img-box">
-          <img src="assets/images/prado.jpg" alt="Toyota Land Cruiser Prado">
+          <img src="assets/images/Toyota Land Cruiser Prado.jpeg" alt="Toyota Land Cruiser Prado">
           <div class="fleet-tag">Premium</div>
         </div>
         <div class="fleet-info">

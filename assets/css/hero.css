@@ -10,6 +10,27 @@
   max-width: 1400px;
   margin: 0 auto;
   align-items: start;
+  background-image: url('../images/start.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ---- Stats Row ---- */
@@ -27,6 +48,15 @@
   font-weight: 900;
   line-height: 1;
   color: var(--ink);
+}
+
+.star-logo {
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .stat-label {
