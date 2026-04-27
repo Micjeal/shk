@@ -7,13 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- 1. HAMBURGER MENU ---- */
   const hamburger = document.querySelector('.hamburger');
   const navLinksContainer = document.querySelector('.nav-links');
+  const navOverlay = document.querySelector('.nav-overlay');
 
   if (hamburger && navLinksContainer) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       navLinksContainer.classList.toggle('open');
+      if (navOverlay) {
+        navOverlay.classList.toggle('active');
+      }
     });
   }
+
+  // Close menu when clicking overlay
+  if (navOverlay && navLinksContainer && hamburger) {
+    navOverlay.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinksContainer.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+  }
+
+  // Close menu when clicking a nav link
+  const allNavLinks = document.querySelectorAll('.nav-links a');
+  allNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinksContainer.classList.remove('open');
+      if (navOverlay) {
+        navOverlay.classList.remove('active');
+      }
+    });
+  });
 
   /* ---- 2. ACTIVE NAV LINK ---- */
   const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
@@ -370,6 +395,153 @@ const countUp = (el) => {
       rotateTestimonial();
       setInterval(rotateTestimonial, 4000);
     }, 2000);
+  }
+
+  /* ---- 13. CTA SECTION INTERACTIONS ---- */
+  
+  /* ---- 13.1 PROOF STRIP COUNTERS ---- */
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function animateCount(el, end, suffix, duration) {
+    let startTime = null;
+
+    function tick(ts) {
+      if (!startTime) startTime = ts;
+      const elapsed  = ts - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value    = Math.floor(easeOutCubic(progress) * end);
+      el.innerHTML   = value + '<span>' + suffix + '</span>';
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  /* Observe each proof number and fire once visible */
+  const proofNums = document.querySelectorAll('.proof-number[data-target]');
+
+  if (proofNums.length) {
+    const proofObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el     = e.target;
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          animateCount(el, target, suffix, 1600);
+          proofObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    proofNums.forEach(el => proofObserver.observe(el));
+  }
+
+  /* ---- 13.2 FEATURE ITEMS — staggered entrance ---- */
+  const featureItems = document.querySelectorAll('.cta-feature-item');
+
+  if (featureItems.length) {
+    const featureObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          featureItems.forEach((item, i) => {
+            setTimeout(() => {
+              item.style.opacity   = '1';
+              item.style.transform = 'translateX(0)';
+            }, i * 120);
+          });
+          featureObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    /* Set initial hidden state via JS (avoids FOUC if CSS loads late) */
+    featureItems.forEach(item => {
+      item.style.opacity   = '0';
+      item.style.transform = 'translateX(24px)';
+      item.style.transition = 'opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1)';
+    });
+
+    const ctaSection = document.querySelector('.final-cta');
+    if (ctaSection) featureObserver.observe(ctaSection);
+  }
+
+  /* ---- 13.3 PARALLAX GLOW BLOBS on mouse move ---- */
+  const ctaContainer = document.querySelector('.cta-container');
+  const glow1        = document.querySelector('.cta-glow-1');
+  const glow2        = document.querySelector('.cta-glow-2');
+
+  if (ctaContainer && glow1 && glow2) {
+    ctaContainer.addEventListener('mousemove', (e) => {
+      const rect  = ctaContainer.getBoundingClientRect();
+      const xPct  = (e.clientX - rect.left) / rect.width;
+      const yPct  = (e.clientY - rect.top)  / rect.height;
+
+      const moveX1 = (xPct - 0.5) * 40;
+      const moveY1 = (yPct - 0.5) * 30;
+      const moveX2 = (xPct - 0.5) * -30;
+      const moveY2 = (yPct - 0.5) * -24;
+
+      glow1.style.transform = `translate(${moveX1}px, ${moveY1}px) scale(1)`;
+      glow2.style.transform = `translate(${moveX2}px, ${moveY2}px) scale(1)`;
+    });
+
+    ctaContainer.addEventListener('mouseleave', () => {
+      glow1.style.transform = '';
+      glow2.style.transform = '';
+      glow1.style.transition = 'transform 1s ease';
+      glow2.style.transition = 'transform 1s ease';
+    });
+
+    ctaContainer.addEventListener('mouseenter', () => {
+      glow1.style.transition = 'transform 0.1s linear';
+      glow2.style.transition = 'transform 0.1s linear';
+    });
+  }
+
+  /* ---- 13.4 BUTTON RIPPLE ---- */
+  const ctaBtns = document.querySelectorAll('.btn-main, .btn-outline');
+
+  ctaBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      const existing = this.querySelector('.cta-ripple');
+      if (existing) existing.remove();
+
+      const rect   = this.getBoundingClientRect();
+      const size   = Math.max(rect.width, rect.height) * 2;
+      const ripple = document.createElement('span');
+
+      ripple.className = 'cta-ripple';
+      ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        width: ${size}px;
+        height: ${size}px;
+        top: ${e.clientY - rect.top  - size / 2}px;
+        left: ${e.clientX - rect.left - size / 2}px;
+        background: rgba(255,255,255,0.18);
+        transform: scale(0);
+        animation: cta-ripple-anim 0.55s ease-out forwards;
+        pointer-events: none;
+      `;
+
+      this.style.position = 'relative';
+      this.style.overflow = 'hidden';
+      this.appendChild(ripple);
+
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+
+  /* Inject ripple keyframe once */
+  if (!document.getElementById('cta-ripple-kf')) {
+    const style = document.createElement('style');
+    style.id    = 'cta-ripple-kf';
+    style.textContent = `
+      @keyframes cta-ripple-anim {
+        to { transform: scale(1); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
   }
 
 });
