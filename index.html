@@ -10,11 +10,17 @@
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
-  <!-- Vercel Analytics -->
+  <!-- Vercel Analytics (only when deployed on Vercel) -->
   <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    // Only load Vercel Analytics when deployed on Vercel
+    if (window.location.hostname.includes('vercel.app') || window.location.hostname.includes('vercel.com')) {
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      var script = document.createElement('script');
+      script.src = '/_vercel/insights/script.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
   
   <!-- Favicon Styling -->
   <style>
