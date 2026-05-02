@@ -1,0 +1,24 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "A professional transport and travel agency website for Skahhe Travel Care (U) Ltd, showcasing premium transportation services across Uganda with an elegant modern design and smooth interactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Micjeal/shk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Micjeal/shk/issues"
+  },
+  "homepage": "https://github.com/Micjeal/shk#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
