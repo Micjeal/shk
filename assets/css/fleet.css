@@ -172,6 +172,70 @@
 
 .btn-main:hover { background: var(--gold); }
 
+/* ---- Fleet Showcase ---- */
+.fleet-showcase {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid var(--sand);
+}
+
+.fleet-showcase-left {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.fleet-showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.fleet-showcase-left:hover .fleet-showcase-img {
+  transform: scale(1.02);
+}
+
+.fleet-showcase-right h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.fleet-showcase-right p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.fleet-features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.fleet-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.fleet-features i {
+  color: var(--gold);
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .fleet-catalog { grid-template-columns: repeat(2, 1fr); }
@@ -182,4 +246,6 @@
 @media (max-width: 768px) {
   .fleet-catalog { grid-template-columns: 1fr; }
   .fleet-cta-bar { flex-direction: column; text-align: center; gap: 25px; }
+  .fleet-showcase { grid-template-columns: 1fr; gap: 30px; padding: 30px 20px; }
+  .fleet-showcase-right h3 { font-size: 1.5rem; }
 }
